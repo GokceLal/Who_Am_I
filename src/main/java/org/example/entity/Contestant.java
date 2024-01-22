@@ -20,10 +20,7 @@ public class Contestant {
     @Column(name = "password")
     String password;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "game_id")
+    @ManyToOne
     Game game;
-
-
 
 }

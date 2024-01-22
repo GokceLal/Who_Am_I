@@ -3,6 +3,7 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -17,11 +18,11 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @OneToMany
-    @JoinColumn(name = "contestant_id")
-    List<Contestant> contestant;
-     @OneToMany
-   List<Celebrity> celebrities;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "game", fetch = FetchType.EAGER)
+    List<Contestant> contestant = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "game", fetch = FetchType.EAGER)
+    List<Celebrity> celebrities;
 
 
 }

@@ -20,11 +20,7 @@ public class InterestingFacts {
     @Column(name = "summary")
     String summary;
 
-    @OneToOne
+    @OneToOne(mappedBy = "interestingFacts", cascade = CascadeType.ALL)
     Celebrity celebrity;
-
-
-
 }
-
 
