@@ -25,11 +25,11 @@ public class Celebrity {
     String description;
     String image;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    List<InterestingFacts> interestingFacts;
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "celebrity")
+    InterestingFacts interestingFacts;
 
-    @ManyToOne
-    Game game;
+ //   @ManyToOne
+ //   Game game;
 
 
 }

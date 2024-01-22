@@ -35,19 +35,20 @@ public class Runner {
                 .country("USA")
                 .image("https://example.com/image.jpg")
                 .description("Some description about the celebrity.")
-                .game(game)
+               //.game(game)
                 .build();
 
-        game.setCelebrities(List.of(celebrity));
+        //game.setCelebrities(List.of(celebrity));
 
         InterestingFacts interestingFacts = InterestingFacts.builder()
                 .celebrity(celebrity)
                 .summary("Some interesting facts about the celebrity.")
                 .build();
-
-        celebrity.setInterestingFacts(List.of(interestingFacts));
+         game.setContestant(List.of(contestant));
+       celebrity.setInterestingFacts(interestingFacts);
         interestingFacts.setCelebrity(celebrity);
         contestant.setGame(game);
+
 
         new CelebrityRepository().save(celebrity);
 

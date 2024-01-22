@@ -20,9 +20,8 @@ public class Game {
     @OneToMany
     @JoinColumn(name = "contestant_id")
     List<Contestant> contestant;
-
-    @OneToMany
-    List<Celebrity> celebrities;
+     @OneToMany
+   List<Celebrity> celebrities;
 
 
 }
